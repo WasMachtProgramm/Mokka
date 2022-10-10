@@ -1,0 +1,7 @@
+name: Mokka
+version: '${version}'
+main: de.wasmachtprogramm.mokka.Mokka
+api-version: 1.18
+depend: [ protocollib ]
+authors: [ Flo, Nick, Nils, Hendrik ]
+description: Anticheat
