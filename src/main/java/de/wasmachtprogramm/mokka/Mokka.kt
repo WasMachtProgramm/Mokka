@@ -1,17 +1,23 @@
-package de.wasmachtprogramm.mokka;
+package de.wasmachtprogramm.mokka
 
-import org.bukkit.plugin.java.JavaPlugin;
+import de.wasmachtprogramm.mokka.packetlisteners.TestHandler
+import org.bukkit.plugin.java.JavaPlugin
 
-public final class Mokka extends JavaPlugin {
-
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
-
+class Mokka : JavaPlugin() {
+    override fun onEnable() {
+        plugin = this
+        PacketHandler.setup(
+            // here you can add your packet listeners
+            TestHandler
+        )
     }
 
-    @Override
-    public void onDisable() {
+    override fun onDisable() {
         // Plugin shutdown logic
+    }
+
+    companion object {
+        private var plugin: Mokka? = null
+        val instance get() = plugin ?: error("Plugin has not been initialized yet")
     }
 }

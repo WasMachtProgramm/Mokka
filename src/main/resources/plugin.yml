@@ -1,6 +1,6 @@
 name: Mokka
 version: '${version}'
-main: de.wasmachtprogramm.mokka.Mokka
+main: de.wasmachtprogramm.mokka.MokkaKt
 api-version: 1.18
 depend: [ ProtocolLib ]
 authors: [ Flo, Nick, Nils, Hendrik ]
