@@ -2,6 +2,7 @@ package de.wasmachtprogramm.mokka
 
 import de.wasmachtprogramm.mokka.packetlisteners.SpeedHandler
 import de.wasmachtprogramm.mokka.packetlisteners.TestHandler
+import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
 class Mokka : JavaPlugin() {
@@ -9,9 +10,9 @@ class Mokka : JavaPlugin() {
         plugin = this
         PacketHandler.setup(
                 // here you can add your packet listeners
-                TestHandler,
-                SpeedHandler
+                TestHandler
         )
+        Bukkit.getPluginManager().registerEvents(SpeedHandler, this)
     }
 
     override fun onDisable() {
